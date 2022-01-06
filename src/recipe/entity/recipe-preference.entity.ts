@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   CreateDateColumn,
   Entity,
   JoinColumn,
@@ -10,7 +11,7 @@ import { User } from '../../user/entity/user.entity';
 import { Recipe } from './recipe.entity';
 
 @Entity('recipe_preferences')
-export class RecipePreference {
+export class RecipePreference extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
