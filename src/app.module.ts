@@ -10,6 +10,7 @@ import { PostModule } from './post/post.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { MorganInterceptor, MorganModule } from 'nest-morgan';
 import { CommentModule } from './comment/comment.module';
+import { ENV_PATH } from './constants';
 
 @Module({
   imports: [
@@ -19,15 +20,7 @@ import { CommentModule } from './comment/comment.module';
     DatabaseConfigModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: [
-        `env/${
-          process.env.NODE_ENV === 'production'
-            ? 'prod'
-            : process.env.NODE_ENV === 'test'
-            ? 'test'
-            : 'dev'
-        }.env`,
-      ],
+      envFilePath: [ENV_PATH],
       ignoreEnvFile: process.env.NODE_ENV === 'production',
     }),
     RecipeModule,
