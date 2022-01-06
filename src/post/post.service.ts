@@ -89,7 +89,7 @@ export class PostService {
     post: Post,
   ): Promise<PostIncludePreference> {
     const preference = await this.getPostPreferenceCountByPostId(post.id);
-    return { preference, ...post };
+    return { preference, ...post } as any;
   }
 
   private async postPreferenceListPipeline(

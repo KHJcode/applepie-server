@@ -77,7 +77,7 @@ export class RecipeService {
     recipe: Recipe,
   ): Promise<RecipeIncludePreference> {
     const preference = await this.getPreferenceCountByRecipeId(recipe.id);
-    return { preference, ...recipe };
+    return { preference, ...recipe } as any;
   }
 
   private async recipePreferenceListPipeline(
