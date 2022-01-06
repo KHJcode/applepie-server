@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   CreateDateColumn,
   Entity,
   JoinColumn,
@@ -10,7 +11,7 @@ import { User } from '../../user/entity/user.entity';
 import { Post } from './post.entity';
 
 @Entity('post_preferences')
-export class PostPreference {
+export class PostPreference extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

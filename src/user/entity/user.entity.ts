@@ -5,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   OneToMany,
+  BaseEntity,
 } from 'typeorm';
 import { Recipe } from '../../recipe/entity/recipe.entity';
 import { Post } from '../../post/entity/post.entity';
@@ -13,7 +14,7 @@ import { PostPreference } from '../../post/entity/post-preference.entity';
 import { Comment } from '../../comment/entity/comment.entity';
 
 @Entity('users')
-export class User {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

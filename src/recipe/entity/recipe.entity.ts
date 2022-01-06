@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
@@ -12,7 +13,7 @@ import { User } from '../../user/entity/user.entity';
 import { RecipePreference } from './recipe-preference.entity';
 
 @Entity('recipes')
-export class Recipe {
+export class Recipe extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
