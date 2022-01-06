@@ -11,7 +11,7 @@ import { RecipeIncludePreference } from './interface/recipe-include-preference.i
 import { RequestRecipePreferenceDto } from './dto/request-recipe-preference.dto';
 import { LIST_WHERE_OPTION } from '../utils/list-where-option';
 
-const RECIPE_LIST_STEP_POINT = 15;
+const RECIPE_LIST_STEP_POINT = 150;
 const RECIPE_LIST_OPTION: FindManyOptions<Recipe> = {
   take: RECIPE_LIST_STEP_POINT,
   select: RECIPE_LIST_SELECT,
